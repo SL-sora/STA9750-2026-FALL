@@ -9,11 +9,20 @@ website:
   site-url: "https://github.com/SL-sora/STA9750-2026-FALL/"
   navbar:
     background: primary
-    search: false
+    search: true
+    right:
+      - text: "Home"
+        href: "./index.html"
+      - text: "Projects"
+        href: "./project_experience.html"
+      - text: "Experience"
+        href: "./professional_experience.html"
+      - text: "Contact"
+        href: "./contact_information.html"
     
 format:
   html:
-    theme: morph
+    theme: vapor
     toc: false
 
 editor:
