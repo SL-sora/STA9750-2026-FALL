@@ -22,7 +22,8 @@ title: "Professional Experience"
 *Z Company* 
   * Extracted financial data using SQL and reconciled $200M budgets in Excel, improving reporting accuracy across agencies.
   * Analyzed historical trends as a benchmark against current data, supporting cross-departmental validation and leadership reporting.
-  
+
+---
 
 ::: {style="text-align: center;"}
 ### I am always looking for ways to build skills...
