@@ -1,0 +1,16 @@
+---
+title: "Contact Information"
+---
+
+::: {style="text-align: center;"}
+### Shall we connect?
+:::
+
+
+Email: [myemail@gmail.com](myemail@gmail.com) 
+
+---
+# adding a placeholder email 
+---
+
+Would love to connect and find out how I can help you!

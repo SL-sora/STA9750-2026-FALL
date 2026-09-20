@@ -1,0 +1,23 @@
+---
+title: "Project Experience"
+---
+
+::: {style="text-align: center;"}
+### Take a look at my personal projects... 
+:::
+
+#### Airline Loyalty & Revenue Management Analytics
+*Market Analyst | Python, SQL, Power BI, Copilot*
+
+* Built an end-to-end loyalty analytics system on a 412K-row member dataset with JetBlue TrueBlue SEC 10-K financials (FY2021-2024); delivered a 3-page Power BI dashboard analyzing campaign ROI, points liability by segment, and redemption
+cost trends.
+
+#### [Banking Intelligence: Credit Card Spend Forecasting & Anomaly Detection](https://github.com/SL-sora/Spending-Intelligence-Credit-Card-Spend-Forecasting-Anomaly-Detection.git "Project Link")
+*Data Analyst | Python (Prophet), SQL, PostgreSQL, AWS S3, AWS RDS, Plaid API, Cursor*
+
+* Built a forecasting system using Facebook Prophet on 1.3M transactions and a custom Z-score anomaly engine for personalized spend deviation alerts, validated with 65-week walk-forward retraining per category.
+
+#### [Amazon Reviews Sentiment Analysis Model](https://github.com/SL-sora/my-bigdata_project-sa.git "Project Link")
+*Data Analyst | Python, SQL, AWS S3*
+
+* Built a Python-based machine learning pipeline to analyze 12GB of Amazon reviews, performing EDA and visualizations of consumer sentiment and behavior trends to translate raw data into insights supporting product strategy and uncover potential strategic sales.

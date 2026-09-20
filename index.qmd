@@ -1,0 +1,71 @@
+---
+title: "Shedekatul Apsora"
+---
+
+
+::: {style="text-align: center;"}
+# Welcome to my page!
+:::
+
+---
+
+![](pic/SAM_1800.JPG){width=50% fig-align=center}
+
+
+::: {style="text-align: center;"}
+### About Me
+:::
+
+An aspiring Product Manager and a Business Analytics graduate student (MSBA, 4.0 GPA) at Baruch College with a CIS foundation. 
+
+Currently, a PM intern with experience in data analysis, IT project coordination, and portfolio operations management.
+
+Delivering results across 35+ concurrent projects, $200M budget reconciliation, and production analytics systems. 
+
+Proficient in SQL, Python, Power BI, and Tableau for gathering, analyzing, and visualizing data for leadership.
+
+You can find me at...
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+if(!require("leaflet")){
+    options(repos=c(CRAN="https://cloud.r-project.org"))
+    install.packages("leaflet")
+    stopifnot(require("leaflet"))
+}
+
+baruch_longitude <- -73.98333
+baruch_latitude  <- +40.74028
+
+leaflet() |>
+  addTiles() |>
+  setView(baruch_longitude, baruch_latitude, zoom=17) |>
+  addPopups(baruch_longitude, baruch_latitude, 
+            "I am a Master's student at <b>Baruch College</b>!")
+```
+
+--- 
+
+::: {style="text-align: center;"}
+### Click the following to find out more about me...\
+
+
+### [Projects](./project_experience.html "Personal Projects")\
+
+### [Experience](./professional_experience.html "Professional Experience")\
+
+### [Skills](./professional_experience.html "Skills")
+
+
+
+:::
+
+```{r}
+#| include: false
+1+1
+```
+--------------
+Last Updated: `r format(Sys.time(), "%A %m %d, %Y at %H:%M%p")`

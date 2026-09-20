@@ -1,0 +1,34 @@
+---
+title: "Professional Experience"
+---
+
+::: {style="text-align: center;"}
+### I had a lot of fun doing the following...
+:::
+
+* **Management Intern**\
+*X Company* 
+  * Co-designed naming conventions for financial service contracts with the COO, applying retrieval-focused logic across document type, date, and department to standardize classification for 2,000+ pages scanned daily.
+  * Flagged AI misclassifications and provided structured naming and folder patterns as training signals to IT, serving as the primary human data source for an in-house document scanning model in active development.
+
+
+* **IT Project Coordinator**\
+*Y Company* 
+  * Managed requirements, roadmaps, and delivery tracking across 35+ projects by prioritizing scope and resources in collaboration with the CIO to consistently hit KPIs and monitor projects for continuous improvement.
+  * Led a cybersecurity cleanup across 40+ departments, implementing real-time Jira/SharePoint dashboards for leadership risk visibility, creating data visualizations for PowerPoint presentations, and reducing incident response times by 25%.
+  
+  
+* **Data Analyst Intern**\
+*Z Company* 
+  * Extracted financial data using SQL and reconciled $200M budgets in Excel, improving reporting accuracy across agencies.
+  * Analyzed historical trends as a benchmark against current data, supporting cross-departmental validation and leadership reporting.
+  
+
+::: {style="text-align: center;"}
+### I am always looking for ways to build skills...
+:::
+
+**Technical:** SQL, Python, Microsoft Excel, Power BI, Tableau, AWS S3, AWS RDS, Microsoft Access, Cursor, Copilot
+
+**Collaboration & Tools:** Jira, SharePoint, Confluence, ServiceNow, Trello, Microsoft Office
+
