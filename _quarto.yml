@@ -22,8 +22,9 @@ website:
     
 format:
   html:
-    theme: vapor
+    theme: journal
     toc: false
+  
 
 editor:
   mode: source
