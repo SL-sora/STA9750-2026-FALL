@@ -1086,60 +1086,46 @@ Well, the GTA VI evaluates the lbs of CO2 emitted per Passenger Mile Traveled (P
 #| fig-height: 4.0
 
 
-# Calculate dataset median (excluding NAs and zero values)
+# Calculate dataset median (excluding NAs)
 national_median_pmt <- median(normalized_emissions$emissions_per_pmt, na.rm = TRUE)
-
-# Format the median for display (rounded to 3 decimals)
 median_pmt_fmt <- round(national_median_pmt, 3)
-
-# Dynamically calculate how many times more efficient WMATA is compared to the median
 wmata_multiplier <- round(national_median_pmt / greenest_pmt, 0)
 
-# 1. Pull the top 10 greenest agencies sorted from lowest to highest emissions
-top10_greenest <- normalized_emissions %>%
-  filter(!is.na(emissions_per_pmt), emissions_per_pmt > 0) %>%
-  arrange(emissions_per_pmt) %>%
-  slice_head(n = 10) %>%
+# 1. Pull the top 10 greenest agencies, lowest emissions first
+top10_greenest <- normalized_emissions |>
+  filter(!is.na(emissions_per_pmt), emissions_per_pmt > 0) |>
+  arrange(emissions_per_pmt) |>
+  slice_head(n = 10) |>
   mutate(
     Agency_Short = str_trunc(`Agency Name`, 32),
-    Is_Winner = if_else(`Agency Name` == greenest_name, "Winner", "Runner Up"),
-    tooltip_text = glue("<b>{`Agency Name`}</b><br>Emissions: {round(emissions_per_pmt, 4)} lbs CO2/PMT")
+    Is_Winner = if_else(`Agency Name` == greenest_name, "Winner", "Runner Up")
   )
 
-# 2. Build sorted bar chart (smallest emissions on the left)
-p1 <- ggplot(top10_greenest, aes(x = reorder(Agency_Short, emissions_per_pmt), y = emissions_per_pmt, fill = Is_Winner)) +
-  geom_col_interactive(
-    aes(tooltip = tooltip_text, data_id = Agency_Short),
-    width = 0.55,
-    show.legend = FALSE
-  ) +
-  geom_text(
-    aes(label = paste0(round(emissions_per_pmt, 3), " lbs")),
-    vjust = -0.5,
-    fontface = "bold",
-    size = 3.3,
-    color = "#222222"
-  ) +
+# 2. Build the bar chart
+p1 <- ggplot(top10_greenest,
+             aes(x = reorder(Agency_Short, emissions_per_pmt),
+                 y = emissions_per_pmt,
+                 fill = Is_Winner)) +
+  geom_col(width = 0.55, show.legend = FALSE) +
+  geom_text(aes(label = paste0(round(emissions_per_pmt, 3), " lbs")),
+            vjust = -0.5, fontface = "bold", size = 3.3, color = "#222222") +
   scale_fill_manual(values = c("Winner" = "#BAFFC9", "Runner Up" = "#BAE1FF")) +
   scale_y_continuous(expand = expansion(mult = c(0, 0.2))) +
   theme_minimal(base_size = 12) +
-  labs(
-    title = "Top 10 Greenest Transit Agencies in the US",
-    subtitle = "Ranked by carbon efficiency (lbs CO2 per Passenger Mile Traveled)",
-    x = NULL,
-    y = "lbs CO2 / PMT",
-    caption = "Source: FTA National Transit Database (NTD) & US EIA Energy Data"
-  ) +
-  theme(
-    plot.title = element_text(face = "bold", size = 13),
-    panel.grid.major.x = element_blank(),
-    axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1, face = "bold", size = 8.5, color = "#222222"),
-    plot.margin = margin(t = 10, r = 10, b = 20, l = 10),
-    plot.caption = element_text(color = "gray40", size = 9)
-  )
+  labs(title = "Top 10 Greenest Transit Agencies in the US",
+       subtitle = "Ranked by carbon efficiency (lbs CO2 per Passenger Mile Traveled)",
+       x = NULL,
+       y = "lbs CO2 / PMT",
+       caption = "Source: FTA National Transit Database (NTD) & US EIA Energy Data") +
+  theme(plot.title = element_text(face = "bold", size = 13),
+        panel.grid.major.x = element_blank(),
+        axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1,
+                                   face = "bold", size = 8.5, color = "#222222"),
+        plot.margin = margin(t = 10, r = 10, b = 20, l = 10),
+        plot.caption = element_text(color = "gray40", size = 9))
 
-# Render interactive ggiraph plot
-girafe(ggobj = p1, width_svg = 8.5, height_svg = 5.2)
+# 3. Print the plot 
+p1
 ```
 
 Without further adieu, the top national honor for The Greenest Transit Agency goes to **`r greenest_name`**.
