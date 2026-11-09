@@ -21,3 +21,8 @@ cost trends.
 *Data Analyst | Python, SQL, AWS S3*
 
 * Built a Python-based machine learning pipeline to analyze 12GB of Amazon reviews, performing EDA and visualizations of consumer sentiment and behavior trends to translate raw data into insights supporting product strategy and uncover potential strategic sales.
+
+
+### Mini-Projects
+
+### [MP01](./mp01.html "MP01")\
